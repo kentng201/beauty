@@ -42,9 +42,9 @@
 			"patterns": [
 				{
 					"name": "entity.name.tag.beau",
-					"match": "\\.carosal (.*?) (\\1)\\.",
+					"match": "\\.([^\\s]+) (.*?) (\\1)\\.",
 					"captures": {
-						"1": {
+						"2": {
 							"name": "attributes.beau",
 							"patterns": [{
 								"include": "#declare"
