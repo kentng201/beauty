@@ -9,10 +9,10 @@
 			"include": "#strings"
 		},
 		{
-			"include": "#inputs"
+			"include": "#declare"
 		},
 		{
-			"include": "#declare"
+			"include": "#html-full"
 		},
 		{
 			"include": "#html"
@@ -23,7 +23,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.beau",
-					"match": "\\b(if|while|ford|return)\\b"
+					"match": "\\b(if|while|for|return)\\b"
 				}
 			]
 		},
@@ -38,59 +38,28 @@
 				}
 			]
 		},
-		"inputs": {
-			"patterns": [
-				{
-					"name": "entity.name.class.beau",
-					"match": "\\.input input\\."
-				}
-			]
-		},
 		"html": {
 			"patterns": [
 				{
-					"name": "entity.name.tag.html",
-					"begin": "\\.([^\\s]+)",
-					"end": "(?:.*\\b\\1\\b)\\.",
-					"patterns": [
-						{
-							"include": "#declare"
+					"name": "entity.name.tag.beau",
+					"match": "\\.carosal (.*?) (\\1)\\.",
+					"captures": {
+						"1": {
+							"name": "attributes.beau",
+							"patterns": [{
+								"include": "#declare"
+							}]
 						}
-					]
+					}
 				}
+
 			]
 		},
 		"declare": {
 			"patterns": [
-				
 				{
-					"name": "meta.tag.block.html",
-					"begin": "<div>",
-					"end": "</div>",
-					"patterns": [
-						{
-							"name": "entity.name.tag.html",
-							"match": "\\b\\w+\\b"
-						},
-						{
-							"name": "string.quoted.double.html",
-							"begin": ">",
-							"end": "<",
-							"patterns": [
-								{
-									"name": "source.js.embedded.html",
-									"contentName": "source.js",
-									"begin": "(?=.)",
-									"end": "(?=<)",
-									"patterns": [
-										{
-											"include": "source.js"
-										}
-									]
-								}
-							]
-						}
-					]
+					"name": "comment.line.double-dash.beau",
+					"match": "^,,\\s(.+)$"
 				},
 				{
 					"name": "variable.other.beau",
@@ -109,13 +78,44 @@
 					"match": "\\b-?\\d+(?:\\.\\d+)?\\b"
 				},
 				{
-					"name": "string.quoted.double.beau",
+					"name": "string.unquoted.beau",
 					"match": "\\b(?!\"[^\"\\\\]*(?:\\\\.[^\"\\\\]*)*\")(?!\\')\\b[a-zA-Z_$][a-zA-Z0-9_$]*\\b"
 				},
 				{
 					"name": "string.quoted.single.beau",
 					"begin": "'",
 					"end": "'",
+					"patterns": [
+						{
+							"name": "constant.character.escape.beau",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.double.beau",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.beau",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.other.beau",
+					"match": "^\\.\\.\\s(.+)$",
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.comment.html"
+						}
+					}
+				},
+				{
+					"name": "string.quoted.other.beau",
+					"begin": "`",
+					"end": "`",
 					"patterns": [
 						{
 							"name": "constant.character.escape.beau",
