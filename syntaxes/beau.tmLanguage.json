@@ -7,14 +7,25 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#inputs"
+		},
+		{
+			"include": "#declare"
+		},
+		{
+			"include": "#html"
 		}
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.beau",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.beau",
+					"match": "\\b(if|while|ford|return)\\b"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.beau",
@@ -26,7 +37,101 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"inputs": {
+			"patterns": [
+				{
+					"name": "entity.name.class.beau",
+					"match": "\\.input input\\."
+				}
+			]
+		},
+		"html": {
+			"patterns": [
+				{
+					"name": "entity.name.tag.html",
+					"begin": "\\.([^\\s]+)",
+					"end": "(?:.*\\b\\1\\b)\\.",
+					"patterns": [
+						{
+							"include": "#declare"
+						}
+					]
+				}
+			]
+		},
+		"declare": {
+			"patterns": [
+				
+				{
+					"name": "meta.tag.block.html",
+					"begin": "<div>",
+					"end": "</div>",
+					"patterns": [
+						{
+							"name": "entity.name.tag.html",
+							"match": "\\b\\w+\\b"
+						},
+						{
+							"name": "string.quoted.double.html",
+							"begin": ">",
+							"end": "<",
+							"patterns": [
+								{
+									"name": "source.js.embedded.html",
+									"contentName": "source.js",
+									"begin": "(?=.)",
+									"end": "(?=<)",
+									"patterns": [
+										{
+											"include": "source.js"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "variable.other.beau",
+					"match": "\\b[a-zA-Z_$][a-zA-Z0-9_$]*\\b"
+				},
+				{
+					"name": "keyword.operator.assignment.beau",
+					"match": "\\.\\."
+				},
+				{
+					"name": "constant.language.boolean.beau",
+					"match": "\\b(true|false)\\b"
+				},
+				{
+					"name": "constant.numeric.beau",
+					"match": "\\b-?\\d+(?:\\.\\d+)?\\b"
+				},
+				{
+					"name": "string.quoted.double.beau",
+					"match": "\\b(?!\"[^\"\\\\]*(?:\\\\.[^\"\\\\]*)*\")(?!\\')\\b[a-zA-Z_$][a-zA-Z0-9_$]*\\b"
+				},
+				{
+					"name": "string.quoted.single.beau",
+					"begin": "'",
+					"end": "'",
+					"patterns": [
+						{
+							"name": "constant.character.escape.beau",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.other",
+					"match": "\\b(?!\"[^\"\\\\]*(?:\\\\.[^\"\\\\]*)*\")(?!\\')\\b[a-zA-Z_$][a-zA-Z0-9_$]*\\b"
+				}
+			]
 		}
 	},
-	"scopeName": "source.beau"
+	"scopeName": "source.beau",
+	"settings": {
+		"foreground": "#f1fa8c"
+	}
 }
