@@ -1,0 +1,25 @@
+{
+  "name": "beautiful-code",
+  "displayName": "Beautiful Code",
+  "description": "Syntax Highlight for Beau Programming Language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "beau",
+      "aliases": ["Beau", "beau"],
+      "extensions": [".beau"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "beau",
+      "scopeName": "source.beau",
+      "path": "./syntaxes/beau.tmLanguage.json"
+    }]
+  }
+}
