@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Beau",
+	"name": "Beautiful",
 	"patterns": [
 		{
 			"include": "#keywords"
@@ -9,13 +9,13 @@
 			"include": "#strings"
 		},
 		{
-			"include": "#declare"
+			"include": "#comments"
 		},
 		{
-			"include": "#html-full"
+			"include": "#bind"
 		},
 		{
-			"include": "#html"
+			"include": "#tag"
 		}
 	],
 	"repository": {
@@ -23,112 +23,64 @@
 			"patterns": [
 				{
 					"name": "keyword.control.beau",
-					"match": "\\b(if|while|for|return)\\b"
+					"match": "\\b(sync|sync\\.)\\b"
+				},
+				{
+					"name": "constant.numeric.beau",
+					"match": "-?\\b\\d+(\\.\\d+)?\\b"
+				},
+				{
+					"name": "constant.language.boolean",
+					"match": "\\b(true|false)\\b"
 				}
 			]
 		},
 		"strings": {
-			"name": "string.quoted.double.beau",
-			"begin": "\"",
-			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.beau",
-					"match": "\\\\."
+					"name": "string.quoted.other.beau",
+					"begin": "\\.\\.\\.",
+					"end": "\\.\\.\\."
 				}
 			]
 		},
-		"html": {
+		"comments": {
 			"patterns": [
 				{
-					"name": "entity.name.tag.beau",
-					"match": "\\.([^\\s]+) (.*?) (\\1)\\.",
-					"captures": {
-						"2": {
-							"name": "attributes.beau",
-							"patterns": [{
-								"include": "#declare"
-							}]
-						}
-					}
+					"name": "comment.line.beau",
+					"match": "\\.\\,(.*)"
 				}
-
 			]
 		},
-		"declare": {
+		"bind": {
 			"patterns": [
-				{
-					"name": "comment.line.double-dash.beau",
-					"match": "^,,\\s(.+)$"
-				},
 				{
 					"name": "variable.other.beau",
-					"match": "\\b[a-zA-Z_$][a-zA-Z0-9_$]*\\b"
+					"match": "\\b([a-zA-Z0-9_]+)\\b"
 				},
 				{
-					"name": "keyword.operator.assignment.beau",
+					"name": "keyword.operator.beau",
 					"match": "\\.\\."
-				},
+				}
+			]
+		},
+		"tag": {
+			"patterns": [
 				{
-					"name": "constant.language.boolean.beau",
-					"match": "\\b(true|false)\\b"
-				},
-				{
-					"name": "constant.numeric.beau",
-					"match": "\\b-?\\d+(?:\\.\\d+)?\\b"
-				},
-				{
-					"name": "string.unquoted.beau",
-					"match": "\\b(?!\"[^\"\\\\]*(?:\\\\.[^\"\\\\]*)*\")(?!\\')\\b[a-zA-Z_$][a-zA-Z0-9_$]*\\b"
-				},
-				{
-					"name": "string.quoted.single.beau",
-					"begin": "'",
-					"end": "'",
+					"name": "meta.tag.beau",
+					"begin": "<boom>",
+					"end": "</boom>",
 					"patterns": [
 						{
-							"name": "constant.character.escape.beau",
-							"match": "\\\\."
+							"include": "$self"
 						}
 					]
-				},
-				{
-					"name": "string.quoted.double.beau",
-					"begin": "\"",
-					"end": "\"",
-					"patterns": [
-						{
-							"name": "constant.character.escape.beau",
-							"match": "\\\\."
-						}
-					]
-				},
-				{
-					"name": "string.quoted.other.beau",
-					"match": "^\\.\\.\\s(.+)$",
-					"captures": {
-						"1": {
-							"name": "punctuation.definition.comment.html"
-						}
-					}
-				},
-				{
-					"name": "string.quoted.other.beau",
-					"begin": "`",
-					"end": "`",
-					"patterns": [
-						{
-							"name": "constant.character.escape.beau",
-							"match": "\\\\."
-						}
-					]
-				},
-				{
-					"name": "string.other",
-					"match": "\\b(?!\"[^\"\\\\]*(?:\\\\.[^\"\\\\]*)*\")(?!\\')\\b[a-zA-Z_$][a-zA-Z0-9_$]*\\b"
 				}
 			]
 		}
+	},
+	"shellVariables": {
+		"TM_COMMENT_START": ".,"
 	},
 	"scopeName": "source.beau",
 	"settings": {
