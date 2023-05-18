@@ -67,14 +67,24 @@
 		"tag": {
 			"patterns": [
 				{
-					"name": "meta.tag.beau",
-					"begin": "<boom>",
-					"end": "</boom>",
-					"patterns": [
-						{
-							"include": "$self"
+					"name": "entity.name.tag.beau",
+					"match": "\\.([^\\s]+) (.*?) (\\1)\\.",
+					"captures": {
+						"2": {
+							"name": "attributes.beau",
+							"patterns": [
+								{
+									"include": "#bind"
+								},
+								{
+									"include": "#strings"
+								},
+								{
+									"include": "#comments"
+								}
+							]
 						}
-					]
+					}
 				}
 			]
 		}
