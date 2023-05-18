@@ -68,7 +68,7 @@
 			"patterns": [
 				{
 					"name": "entity.name.tag.beau",
-					"match": "\\.([^\\s]+) (.*?) (\\1)\\.",
+					"match": "\\.([^\\s]+) ((.|\n)*?) (\\1)\\.",
 					"captures": {
 						"2": {
 							"name": "attributes.beau",
@@ -88,6 +88,10 @@
 							]
 						}
 					}
+				},
+				{
+					"name": "entity.enclose.tag.beau",
+					"match": "\\.\\.\\.\\."
 				}
 			]
 		}
