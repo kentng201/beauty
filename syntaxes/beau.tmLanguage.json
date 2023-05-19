@@ -23,7 +23,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.beau",
-					"match": "\\b(sync|sync\\.)\\b"
+					"match": "\\b(sync)\\b"
 				},
 				{
 					"name": "constant.numeric.beau",
@@ -55,7 +55,7 @@
 		"bind": {
 			"patterns": [
 				{
-					"name": "variable.other.beau",
+					"name": "entity.other.attribute-name.beau",
 					"match": "\\b([a-zA-Z0-9_]+)\\b"
 				},
 				{
