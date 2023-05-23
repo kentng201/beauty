@@ -1,6 +1,6 @@
-# beautiful-code README
+# beauty README
 
-This is the README for your extension "beautiful-code". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "beauty". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 
