@@ -39,9 +39,23 @@
 			"patterns": [
 				{
 					"name": "string.quoted.other.beau",
-					"begin": "\\.\\.\\.\\.",
-					"end": "\\.\\.\\.\\."
-					
+					"begin": "\\.\\.\\.",
+					"end": "\\.\\.\\.",
+					"patterns": [
+						{
+							"name": "string.quoted.template.beau",
+							"begin": ",,",
+							"end": ",,",
+							"patterns": [
+								{
+									"include": "#keywords"
+								},
+								{
+									"include": "#bind"
+								}
+							]
+						}
+					]
 				},
 				{
 					"name": "string.quoted.other.beau",
