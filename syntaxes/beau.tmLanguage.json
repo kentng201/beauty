@@ -86,7 +86,7 @@
 			"patterns": [
 				{
 					"name": "entity.other.attribute-name.beau",
-					"match": "\\b([a-zA-Z0-9_]+)\\b"
+					"match": "\\b((?!mod|plus|minus|times|divide|and|or)[a-zA-Z0-9_]+)\\b"
 				},
 				{
 					"name": "keyword.operator.beau",
@@ -94,7 +94,7 @@
 				},
 				{
 					"name": "keyword.operator.arithmetic.beau",
-					"match": "\\+|-|\\*|\\^|/|mod"
+					"match": "\\+|-|\\*|\\^|/|mod|plus|minus|times|divide|and|or"
 				}
 			]
 		},
