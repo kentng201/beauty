@@ -83,9 +83,9 @@
 			"patterns": [
 				{
 					"name": "entity.name.tag.beau",
-					"match": "\\.([^\\s]+) (.*?) (\\1)\\.",
+					"match": "\\.([^\\s]+)(\\n+)?(.*?)(\\n+)?(\\1)\\.",
 					"captures": {
-						"2": {
+						"3": {
 							"name": "attributes.beau",
 							"patterns": [
 								{
