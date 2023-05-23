@@ -86,7 +86,7 @@
 			"patterns": [
 				{
 					"name": "entity.other.attribute-name.beau",
-					"match": "\\b((?!mod|plus|minus|times|divide|and|or|async|await)[a-zA-Z0-9_]+)\\b"
+					"match": "(?!mod|plus|minus|times|divide|and|or|async|await)\\b[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)?\\b"
 				},
 				{
 					"name": "keyword.operator.beau",
@@ -100,7 +100,7 @@
 								},
 								{
 									"name": "variable.language",
-									"match": "\\b((?!mod|plus|minus|times|divide|and|or|async|await)[a-zA-Z0-9_]+)\\b",
+									"match": "(?!mod|plus|minus|times|divide|and|or|async|await)\\b[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)?\\b",
 									"scope": "variable.language"
 								}
 							]
