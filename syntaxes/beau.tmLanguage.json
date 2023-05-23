@@ -86,12 +86,27 @@
 			"patterns": [
 				{
 					"name": "entity.other.attribute-name.beau",
-					"match": "\\b((?!mod|plus|minus|times|divide|and|or)[a-zA-Z0-9_]+)\\b"
+					"match": "\\b((?!mod|plus|minus|times|divide|and|or|async|await)[a-zA-Z0-9_]+)\\b"
 				},
 				{
 					"name": "keyword.operator.beau",
-					"match": "\\.\\."
-				},
+					"match": "\\.\\.(\\w+)",
+					"captures": {
+						"1": {
+							"name": "variable.other.beau",
+							"patterns": [
+								{
+									"include": "#keywords"
+								},
+								{
+									"name": "variable.language",
+									"match": "\\b((?!mod|plus|minus|times|divide|and|or|async|await)[a-zA-Z0-9_]+)\\b",
+									"scope": "variable.language"
+								}
+							]
+						}
+					}
+				},				
 				{
 					"name": "keyword.operator.arithmetic.beau",
 					"match": "\\+|-|\\*|\\^|/|mod|plus|minus|times|divide|and|or"
