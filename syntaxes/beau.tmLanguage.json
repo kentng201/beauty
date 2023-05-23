@@ -41,6 +41,21 @@
 					"name": "string.quoted.other.beau",
 					"begin": "\\.\\.\\.",
 					"end": "\\.\\.\\."
+				},
+				{
+					"name": "string.quoted.other.beau",
+					"begin": "`",
+					"end": "`"
+				},
+				{
+					"name": "string.quoted.double.beau",
+					"begin": "\"",
+					"end": "\""
+				},
+				{
+					"name": "string.quoted.single.beau",
+					"begin": "'",
+					"end": "'"
 				}
 			]
 		},
