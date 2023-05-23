@@ -110,6 +110,16 @@
 				{
 					"name": "keyword.operator.arithmetic.beau",
 					"match": "\\+|-|\\*|\\^|/|mod|plus|minus|times|divide|and|or"
+				},
+				{
+					"name": "meta.function.arrow.beau",
+					"begin": "\\(.*\\)\\s*=>\\s*{",
+					"end": "}",
+					"patterns": [
+						{
+							"include": "source.ts"
+						}
+					]
 				}
 			]
 		},
