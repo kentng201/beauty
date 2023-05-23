@@ -91,6 +91,10 @@
 				{
 					"name": "keyword.operator.beau",
 					"match": "\\.\\."
+				},
+				{
+					"name": "keyword.operator.arithmetic.beau",
+					"match": "\\+|-|\\*|\\^|/|mod"
 				}
 			]
 		},
