@@ -37,7 +37,12 @@
 		},
 		"strings": {
 			"patterns": [
-				
+				{
+					"name": "string.quoted.other.beau",
+					"begin": "\\.\\.\\.\\.",
+					"end": "\\.\\.\\.\\."
+					
+				},
 				{
 					"name": "string.quoted.other.beau",
 					"begin": "`",
@@ -75,6 +80,25 @@
 				}
 			]
 		},
+		"tag.children": {
+			"patterns": [
+				{
+					"include": "#keywords"
+				},
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#comments"
+				},
+				{
+					"include": "#bind"
+				},
+				{
+					"include": "#tag"
+				}
+			]
+		},
 		"tag": {
 			"patterns": [
 				{
@@ -95,6 +119,9 @@
 								},
 								{
 									"include": "#bind"
+								},
+								{
+									"include": "#tag.children"
 								}
 							]
 						}
@@ -116,6 +143,9 @@
 						},
 						{
 							"include": "#bind"
+						},
+						{
+							"include": "#tag.children"
 						}
 					]
 				}
