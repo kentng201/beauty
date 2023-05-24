@@ -177,7 +177,7 @@
 			"patterns": [
 				{
 					"name": "entity.name.tag.beau",
-					"match": "\\.([^\\s]+)(\\n+)?(.*?)(\\n+)?(\\1)\\.",
+					"match": "\\.(?!w\\+)([^\\s]+)(\\n+)?(.*?)(\\n+)?(\\1)\\.",
 					"captures": {
 						"3": {
 							"name": "attributes.beau",
@@ -203,7 +203,7 @@
 				},
 				{
 					"name": "entity.name.tag.beau",
-					"begin": "\\.([^\\s]+)\\s*$",
+					"begin": "\\.(?!w\\+)([^\\s]+)\\s*$",
 					"end": "\\1\\.",
 					"patterns": [
 						{
