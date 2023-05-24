@@ -23,15 +23,23 @@
 			"patterns": [
 				{
 					"name": "keyword.control.beau",
-					"match": "\\b(sync)\\b"
+					"match": "\\b(model|load|save|find|order|by|from|where|between|like|first|last)\\b"
+				},
+				{
+					"name": "keyword.control.beau",
+					"match": "\\b(join|left|right|inner)\\b"
 				},
 				{
 					"name": "constant.numeric.beau",
 					"match": "-?\\b\\d+(\\.\\d+)?\\b"
 				},
 				{
-					"name": "constant.language.boolean",
+					"name": "constant.language.boolean.beau",
 					"match": "\\b(true|false)\\b"
+				},
+				{
+					"name": "constant.language.type.beau",
+					"match": "\\b(string|number|int|boolean|undefined|null)\\b"
 				}
 			]
 		},
@@ -86,7 +94,7 @@
 			"patterns": [
 				{
 					"name": "entity.other.attribute-name.beau",
-					"match": "(?!mod|plus|minus|times|divide|and|or|async|await)\\b[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)?\\b"
+					"match": "(?!and|or|async|await)\\b[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)?\\b"
 				},
 				{
 					"name": "keyword.operator.beau",
@@ -100,13 +108,32 @@
 								},
 								{
 									"name": "variable.language",
-									"match": "(?!mod|plus|minus|times|divide|and|or|async|await)\\b[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)?\\b",
+									"match": "(?!and|or|async|await)\\b[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)?\\b",
 									"scope": "variable.language"
 								}
 							]
 						}
 					}
-				},				
+				},
+				{
+					"name": "keyword.operator.type.beau",
+					"match": "\\,\\,(\\w+)",
+					"captures": {
+						"1": {
+							"name": "variable.other.beau",
+							"patterns": [
+								{
+									"include": "#keywords"
+								},
+								{
+									"name": "variable.language",
+									"match": "(?!and|or|async|await)\\b[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)?\\b",
+									"scope": "variable.language"
+								}
+							]
+						}
+					}
+				},
 				{
 					"name": "keyword.operator.arithmetic.beau",
 					"match": "\\+|-|\\*|\\^|/|mod|plus|minus|times|divide|and|or"
