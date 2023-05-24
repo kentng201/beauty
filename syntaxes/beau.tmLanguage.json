@@ -22,12 +22,16 @@
 		"keywords": {
 			"patterns": [
 				{
-					"name": "keyword.control.beau",
+					"name": "keyword.control.model.beau",
 					"match": "\\b(model|load|save|find|order|by|from|where|between|like|first|last)\\b"
 				},
 				{
-					"name": "keyword.control.beau",
+					"name": "keyword.control.join.beau",
 					"match": "\\b(join|left|right|inner)\\b"
+				},
+				{
+					"name": "keyword.control.operator.beau",
+					"match": "\\d(and|or|async|await)\\b"
 				},
 				{
 					"name": "constant.numeric.beau",
@@ -107,8 +111,8 @@
 									"include": "#keywords"
 								},
 								{
-									"name": "variable.language",
-									"match": "(?!and|or|async|await)\\b[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)?\\b",
+									"name": "variable.language.beau",
+									"match": "\\b[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)?\\b",
 									"scope": "variable.language"
 								}
 							]
@@ -127,7 +131,7 @@
 								},
 								{
 									"name": "variable.language",
-									"match": "(?!and|or|async|await)\\b[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)?\\b",
+									"match": "\\b[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)?\\b",
 									"scope": "variable.language"
 								}
 							]
