@@ -31,7 +31,7 @@
 				},
 				{
 					"name": "keyword.control.operator.beau",
-					"match": "\\b(and|or|\\=\\=|\\=\\=\\=|>|>=|<|<=|bigger|equal|smaller|than|between|like|is)\\b"
+					"match": "\\b(and|or|\\=\\=|\\=\\=\\=|>|>\\=|<|<=|bigger|equal|smaller|than|between|like|is)\\b"
 				},
 				{
 					"name": "keyword.control.long-running.beau",
@@ -60,6 +60,10 @@
 				{
 					"name": "keyword.control.css.color.beau",
 					"match": "\\b(black|silver|gray|white|maroon|red|purple|fuchsia|green|lime|olive|yellow|navy|blue|teal|aqua)\\b"
+				},
+				{
+					"name": "keyword.control.http.beau",
+					"match": "\\b(GET|PUT|POST|DELETE|PATCH|OPTIONS|HEAD|TRACE|CONNECT)\\b"
 				},
 				{
 					"name": "constant.numeric.beau",
