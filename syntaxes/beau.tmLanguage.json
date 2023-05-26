@@ -23,15 +23,43 @@
 			"patterns": [
 				{
 					"name": "keyword.control.model.beau",
-					"match": "\\b(model|load|save|find|order|by|from|where|between|like|first|last)\\b"
+					"match": "(?i)\\b(model|select|find|order|by|from|where|first|last|limit|offset)\\b"
 				},
 				{
-					"name": "keyword.control.join.beau",
+					"name": "keyword.control.model.join.beau",
 					"match": "\\b(join|left|right|inner)\\b"
 				},
 				{
 					"name": "keyword.control.operator.beau",
-					"match": "\\d(and|or|async|await)\\b"
+					"match": "\\b(and|or|\\=\\=|\\=\\=\\=|>|>=|<|<=|bigger|equal|smaller|than|between|like|is)\\b"
+				},
+				{
+					"name": "keyword.control.long-running.beau",
+					"match": "\\b(waiting)\\b"
+				},
+				{
+					"name": "keyword.control.declare.beau",
+					"match": "\\b(declare|type)\\b"
+				},
+				{
+					"name": "keyword.control.assign.beau",
+					"match": "\\b(assign|via|save|load|new|soft|hard|delete)\\b"
+				},
+				{
+					"name": "keyword.control.condition.beau",
+					"match": "\\b(if|else|when|for|every|switch|while|in|of|case|default|break|continue|return|loop|times|as)\\b"
+				},
+				{
+					"name": "keyword.control.exception.beau",
+					"match": "\\b(when|happen|remind|with)\\b"
+				},
+				{
+					"name": "keyword.control.css.beau",
+					"match": "\\b(px|em|rem|vw|vh|vmin|vmax|%)\\b"
+				},
+				{
+					"name": "keyword.control.css.color.beau",
+					"match": "\\b(black|silver|gray|white|maroon|red|purple|fuchsia|green|lime|olive|yellow|navy|blue|teal|aqua)\\b"
 				},
 				{
 					"name": "constant.numeric.beau",
@@ -44,6 +72,10 @@
 				{
 					"name": "constant.language.type.beau",
 					"match": "\\b(string|number|int|boolean|undefined|null)\\b"
+				},
+				{
+					"name": "constant.language.data-type.beau",
+					"match": "\\b(array|object|collection)\\b"
 				}
 			]
 		},
@@ -52,7 +84,7 @@
 				{
 					"name": "string.quoted.other.beau",
 					"begin": "\\.\\.\\.",
-					"end": "\\.\\.\\.",
+					"end": "\\.{3}(?!\\.)",
 					"patterns": [
 						{
 							"name": "string.quoted.template.beau",
