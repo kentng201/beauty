@@ -22,24 +22,24 @@
 		"keywords": {
 			"patterns": [
 				{
-					"name": "keyword.control.model.beau",
-					"match": "(?i)\\b(model|select|find|order|by|from|where|first|last|limit|offset)\\b"
+					"name": "keyword.control.query.beau",
+					"match": "(?i)\\b(select|find|order|by|from|where|first|last|limit|offset|asc|desc)\\b"
 				},
 				{
-					"name": "keyword.control.model.join.beau",
+					"name": "keyword.control.query.join.beau",
 					"match": "\\b(join|left|right|inner)\\b"
 				},
 				{
 					"name": "keyword.control.operator.beau",
-					"match": "\\b(and|or|\\=\\=|\\=\\=\\=|>|>\\=|<|<=|bigger|equal|smaller|than|between|like|is)\\b"
+					"match": "\\b(and|or|not|full|equal|more|less|than|between|like|is)\\b"
 				},
 				{
 					"name": "keyword.control.long-running.beau",
-					"match": "\\b(waiting)\\b"
+					"match": "\\b(wait)\\b"
 				},
 				{
 					"name": "keyword.control.declare.beau",
-					"match": "\\b(declare|type)\\b"
+					"match": "\\b(class|model|static|func|type)\\b"
 				},
 				{
 					"name": "keyword.control.assign.beau",
@@ -47,7 +47,11 @@
 				},
 				{
 					"name": "keyword.control.condition.beau",
-					"match": "\\b(if|else|when|for|every|switch|while|in|of|case|default|break|continue|return|loop|times|as)\\b"
+					"match": "\\b(if|else|for|every|switch|while|case|default|break|continue|return|loop|times|as)\\b"
+				},
+				{
+					"name": "keyword.control.pronouns.beau",
+					"match": "\\b(a|an|in)\\b"
 				},
 				{
 					"name": "keyword.control.exception.beau",
@@ -66,6 +70,14 @@
 					"match": "\\b(GET|PUT|POST|DELETE|PATCH|OPTIONS|HEAD|TRACE|CONNECT)\\b"
 				},
 				{
+					"name": "keyword.control.arithmetic.beau",
+					"match": "\\+|-|\\*|\\^|/|mod|plus|minus|times|divide|and|or"
+				},
+				{
+					"name": "keyword.control.logical.beau",
+					"match": "=|==|===|!=|!==|>|>=|<|<="
+				},
+				{
 					"name": "constant.numeric.beau",
 					"match": "-?\\b\\d+(\\.\\d+)?\\b"
 				},
@@ -75,7 +87,7 @@
 				},
 				{
 					"name": "constant.language.type.beau",
-					"match": "\\b(string|number|int|boolean|undefined|null)\\b"
+					"match": "\\b(string|number|int|decimal|boolean|undefined|null)\\b"
 				},
 				{
 					"name": "constant.language.data-type.beau",
@@ -134,7 +146,7 @@
 			"patterns": [
 				{
 					"name": "entity.other.attribute-name.beau",
-					"match": "(?!and|or|async|await)\\b[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)?\\b"
+					"match": "(?!and|or)\\b[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)?\\b"
 				},
 				{
 					"name": "keyword.operator.beau",
@@ -173,10 +185,6 @@
 							]
 						}
 					}
-				},
-				{
-					"name": "keyword.operator.arithmetic.beau",
-					"match": "\\+|-|\\*|\\^|/|mod|plus|minus|times|divide|and|or"
 				},
 				{
 					"name": "meta.function.arrow.beau",
