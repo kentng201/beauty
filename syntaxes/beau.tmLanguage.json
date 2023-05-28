@@ -43,7 +43,7 @@
 				},
 				{
 					"name": "keyword.control.assign.beau",
-					"match": "\\b(assign|via|set|to|save|load|new|soft|hard|delete|map|reduce|filter|sort|pick)\\b"
+					"match": "\\b(set|to|save|new|soft|hard|delete|map|reduce|filter|sort|pick)\\b"
 				},
 				{
 					"name": "keyword.control.condition.beau",
