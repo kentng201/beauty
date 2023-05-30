@@ -22,23 +22,23 @@
 		"keywords": {
 			"patterns": [
 				{
-					"name": "keyword.control.query.beau",
+					"name": "keyword.control.query.elg",
 					"match": "(?i)\\b(select|find|order|by|from|where|first|last|limit|offset|asc|desc)\\b"
 				},
 				{
-					"name": "keyword.control.query.join.beau",
+					"name": "keyword.control.query.join.elg",
 					"match": "\\b(join|left|right|inner)\\b"
 				},
 				{
-					"name": "keyword.control.operator.beau",
+					"name": "keyword.control.operator.elg",
 					"match": "\\b(and|or|not|full|equal|more|less|than|between|like|is)\\b"
 				},
 				{
-					"name": "keyword.control.long-running.beau",
+					"name": "keyword.control.long-running.elg",
 					"match": "\\b(wait)\\b"
 				},
 				{
-					"name": "keyword.control.declare.beau",
+					"name": "keyword.control.declare.elg",
 					"match": "\\b(class|model|static|func|type)\\b"
 				},
 				{
@@ -46,19 +46,19 @@
 					"match": "\\b(set|to|save|new|soft|hard|delete|map|reduce|filter|sort|pick)\\b"
 				},
 				{
-					"name": "keyword.control.condition.beau",
-					"match": "\\b(if|else|for|every|switch|while|case|default|break|continue|return|loop|times|as)\\b"
+					"name": "keyword.control.condition.elg",
+					"match": "\\b(if|else|for|every|while|stop|continue|return|loop|times|as)\\b"
 				},
 				{
-					"name": "keyword.control.pronouns.beau",
+					"name": "keyword.control.pronouns.elg",
 					"match": "\\b(a|an|in)\\b"
 				},
 				{
-					"name": "keyword.control.exception.beau",
+					"name": "keyword.control.exception.elg",
 					"match": "\\b(when|happen|remind|with)\\b"
 				},
 				{
-					"name": "keyword.control.css.beau",
+					"name": "keyword.control.css.elg",
 					"match": "\\b(px|em|rem|vw|vh|vmin|vmax|%)\\b"
 				},
 				{
@@ -66,7 +66,7 @@
 					"match": "\\b(black|silver|gold|gray|white|maroon|red|purple|fuchsia|green|lime|olive|yellow|navy|blue|teal|aqua)\\b"
 				},
 				{
-					"name": "keyword.control.http.beau",
+					"name": "keyword.control.http.elg",
 					"match": "\\b(GET|PUT|POST|DELETE|PATCH|OPTIONS|HEAD|TRACE|CONNECT)\\b"
 				},
 				{
@@ -78,19 +78,19 @@
 					"match": "=|==|===|!=|!==|~=|>|>=|<|<="
 				},
 				{
-					"name": "constant.numeric.beau",
+					"name": "constant.numeric.elg",
 					"match": "-?\\b\\d+(\\.\\d+)?\\b"
 				},
 				{
-					"name": "constant.language.boolean.beau",
+					"name": "constant.language.boolean.elg",
 					"match": "\\b(true|false)\\b"
 				},
 				{
-					"name": "constant.language.type.beau",
+					"name": "constant.language.type.elg",
 					"match": "\\b(string|number|int|decimal|boolean|undefined|null)\\b"
 				},
 				{
-					"name": "constant.language.data-type.beau",
+					"name": "constant.language.data-type.elg",
 					"match": "\\b(array|object|collection)\\b"
 				}
 			]
@@ -98,12 +98,12 @@
 		"strings": {
 			"patterns": [
 				{
-					"name": "string.quoted.other.beau",
+					"name": "string.quoted.other.elg",
 					"begin": "\\.\\.\\.",
 					"end": "\\.{3}(?!\\.)",
 					"patterns": [
 						{
-							"name": "string.quoted.template.beau",
+							"name": "string.quoted.template.elg",
 							"begin": ",,",
 							"end": ",,",
 							"patterns": [
@@ -118,17 +118,17 @@
 					]
 				},
 				{
-					"name": "string.quoted.other.beau",
+					"name": "string.quoted.other.elg",
 					"begin": "`",
 					"end": "`"
 				},
 				{
-					"name": "string.quoted.double.beau",
+					"name": "string.quoted.double.elg",
 					"begin": "\"",
 					"end": "\""
 				},
 				{
-					"name": "string.quoted.single.beau",
+					"name": "string.quoted.single.elg",
 					"begin": "'",
 					"end": "'"
 				}
@@ -137,7 +137,7 @@
 		"comments": {
 			"patterns": [
 				{
-					"name": "comment.line.beau",
+					"name": "comment.line.elg",
 					"match": "\\.\\,(.*)"
 				}
 			]
@@ -145,21 +145,21 @@
 		"bind": {
 			"patterns": [
 				{
-					"name": "entity.other.attribute-name.beau",
+					"name": "entity.other.attribute-name.elg",
 					"match": "(?!and|or)\\b[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)?\\b"
 				},
 				{
-					"name": "keyword.operator.beau",
+					"name": "keyword.operator.elg",
 					"match": "\\.\\.(\\w+)",
 					"captures": {
 						"1": {
-							"name": "variable.other.beau",
+							"name": "variable.other.elg",
 							"patterns": [
 								{
 									"include": "#keywords"
 								},
 								{
-									"name": "variable.language.beau",
+									"name": "variable.language.elg",
 									"match": "\\b[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)?\\b",
 									"scope": "variable.language"
 								}
@@ -168,11 +168,11 @@
 					}
 				},
 				{
-					"name": "keyword.operator.type.beau",
+					"name": "keyword.operator.type.elg",
 					"match": "\\,\\,(\\w+)",
 					"captures": {
 						"1": {
-							"name": "variable.other.beau",
+							"name": "variable.other.elg",
 							"patterns": [
 								{
 									"include": "#keywords"
@@ -187,7 +187,7 @@
 					}
 				},
 				{
-					"name": "meta.function.arrow.beau",
+					"name": "meta.function.arrow.elg",
 					"begin": "\\(.*\\)\\s*=>\\s*{",
 					"end": "}",
 					"patterns": [
@@ -220,11 +220,11 @@
 		"tag": {
 			"patterns": [
 				{
-					"name": "entity.name.tag.beau",
+					"name": "entity.name.tag.elg",
 					"match": "\\.(?!w\\+)([^\\s]+)(\\n+)?(.*?)(\\n+)?(\\1)\\.",
 					"captures": {
 						"3": {
-							"name": "attributes.beau",
+							"name": "attributes.elg",
 							"patterns": [
 								{
 									"include": "#keywords"
@@ -246,7 +246,7 @@
 					}
 				},
 				{
-					"name": "entity.name.tag.beau",
+					"name": "entity.name.tag.elg",
 					"begin": "\\.(?!w\\+)([^\\s]+)\\s*$",
 					"end": "\\1\\.",
 					"patterns": [
@@ -273,7 +273,7 @@
 	"shellVariables": {
 		"TM_COMMENT_START": ".,"
 	},
-	"scopeName": "source.beau",
+	"scopeName": "source.elg",
 	"settings": {
 		"foreground": "#f1fa8c"
 	}

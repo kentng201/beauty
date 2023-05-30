@@ -11,15 +11,15 @@
   ],
   "contributes": {
     "languages": [{
-      "id": "beau",
-      "aliases": ["Beau", "beau"],
-      "extensions": [".beau"],
+      "id": "elg",
+      "aliases": ["Beau", "elg"],
+      "extensions": [".elg"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
-      "language": "beau",
-      "scopeName": "source.beau",
-      "path": "./syntaxes/beau.tmLanguage.json"
+      "language": "elg",
+      "scopeName": "source.elg",
+      "path": "./syntaxes/elg.tmLanguage.json"
     }]
   }
 }
